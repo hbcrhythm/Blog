@@ -80,3 +80,8 @@ deploy:
   type: git
   repo: git@github.com:hbcrhythm/hbcrhythm.github.io.git
   branch: master
+
+sitemap:  
+  path: sitemap.xml  
+baidusitemap:  
+  path: baidusitemap.xml  
