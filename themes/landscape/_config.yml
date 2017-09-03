@@ -34,3 +34,9 @@ twitter:
 google_plus:
 fb_admins:
 fb_app_id:
+
+# changyan
+changyan:
+  enable: true
+  appid: cyt9AlIMf
+  appkey: 0f4489db1d54935417a4bdef6ad1ca32
