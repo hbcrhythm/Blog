@@ -71,17 +71,43 @@ net.core.netdev_max_backlog=3000
 
 ##### 查找僵尸进程
 ```
-ps -A -ostat,ppid,pid,cmd | grep -e '^[Zz]'
+$ ps -A -ostat,ppid,pid,cmd | grep -e '^[Zz]'
 ```
 
 ##### 服务器禁止ping
 一般服务器不需要禁止ping,因为禁止之后我们无法通过ping命令来检测服务器是否丢包等。
 ```
 #禁止
-echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all (禁止)
+$ echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all (禁止)
 #开启
-echo 0 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+$ echo 0 > /proc/sys/net/ipv4/icmp_echo_ignore_all
 #永久保存(/etc/rc.d/rc.local 里面内容开机后会自动执行)
-vi /etc/rc.d/rc.local
-echo 1 >/proc/sys/net/ipv4/icmp_echo_ignore_all
+$ vi /etc/rc.d/rc.local
+$ echo 1 >/proc/sys/net/ipv4/icmp_echo_ignore_all
+```
+
+##### 查看内存
+
+```
+$ free -m #MB为单位
+$ free -g #GB为单位
+```
+
+##### 查看内核版本
+```
+$ uname -a
+```
+or
+```
+$ cat /proc/version
+```
+
+##### 查看发行版信息
+```
+$ cat /etc/issue
+```
+
+##### 查看cpu相关信息
+```
+$ cat /proc/cpuinfo
 ```
