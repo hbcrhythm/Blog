@@ -117,3 +117,22 @@ $ cat /proc/cpuinfo
 $ df
 $ df -h #我们更加可读的方式显示
 ```
+
+##### 统计目录下文件行数
+```
+$ find . -name "*.erl" | xargs cat | wc -l
+```
+or
+```
+$ find . -name "*.erl" -exec wc -l {} \; | awk '{sum+=$1}END{print sum}'
+```
+
+##### 统计目录下文件行数，排除空行
+```
+$ find . -name "*.erl" | xargs cat | grep -v ^$ | wc -l
+```
+
+##### 统计目录下文件数
+```
+$ find . -name "*.erl" | wc -l
+```
