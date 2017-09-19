@@ -136,3 +136,9 @@ $ find . -name "*.erl" | xargs cat | grep -v ^$ | wc -l
 ```
 $ find . -name "*.erl" | wc -l
 ```
+
+##### 打包文件，排除指定目录,文件
+```
+$ tar -zcvf dnv_android.tar.gz ./server/ebin --exclude=./Dir
+```
+
